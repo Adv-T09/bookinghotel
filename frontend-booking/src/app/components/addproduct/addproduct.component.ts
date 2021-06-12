@@ -23,9 +23,10 @@ export class AddproductComponent implements OnInit {
 
   previewLoaded: boolean = false;
 
-  constructor(private ps: ProductsService) {}
+  constructor(private ps: ProductsService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   addProduct() {
     this.ps.addProduct(this.productForm.value).subscribe(
@@ -52,7 +53,7 @@ export class AddproductComponent implements OnInit {
         reader.onload = () => {
           this.previewLoaded = true;
           this.productForm.patchValue({
-            img: reader.result,
+            img: reader.result as string,
           });
         };
       }

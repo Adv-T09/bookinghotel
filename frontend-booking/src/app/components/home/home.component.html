@@ -1,3 +1,4 @@
+
 <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
@@ -10,7 +11,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 </style>
 <body class="w3-light-grey">
 <html lang="en">
+
 <head>
+
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,50 +22,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+ 
 <body>
-
   <!-- Header -->
 <header class="w3-display-container w3-content" style="max-width:1500px;">
-  <img class="w3-image" src="https://i.pinimg.com/originals/e0/1f/6e/e01f6ef30f179872bd70fba577d4a086.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
-  <div class="w3-display-left w3-padding w3-col l6 m8">
-    <div class="w3-container w3-red">
-      <h2><i class="fa fa-bed w3-margin-right"></i>Hotel Name</h2>
-    </div>
-    <div class="w3-container w3-white w3-padding-16">
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px;">
-          <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-calendar-o"></i> Check In</label>
-            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
-          </div>
-          <div class="w3-half">
-            <label><i class="fa fa-calendar-o"></i> Check Out</label>
-            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
-          </div>
-        </div>
-        <div class="w3-row-padding" style="margin:8px -16px;">
-          <div class="w3-half w3-margin-bottom">
-            <label><i class="fa fa-male"></i> Adults</label>
-            <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6">
-          </div>
-          <div class="w3-half">
-            <label><i class="fa fa-child"></i> Kids</label>
-          <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6">
-          </div>
-        </div>
-        <div class="form-group">
-            <label for="sel1">Room Type:</label>
-            <select class="form-control" id="sel1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-        </div>
-        <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>
-      </form>
-    </div>
-  </div>
+
 </header>
 
 
@@ -96,7 +60,119 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
   </div>
 </div>
 
-<!-- Page content -->
+
+<!--Main layout-->
+    <main class="mt-5">
+      <div class="container">
+        <!--Section: Content-->
+        <section>
+          <div class="row">
+            <div class="col-md-6 gx-5 mb-4">
+              <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-6 gx-5 mb-4">
+              <h4><strong>Facilis consequatur eligendi</strong></h4>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+                eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+                sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+              </p>
+              <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
+              <p class="text-muted">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+                nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+                alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+              </p>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <hr class="my-5" />
+
+        <!--Section: Content-->
+        <section class="text-center">
+          <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/023.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/111.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <a href="#!" class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+      </div>
+    </main>
+
+    <!-- Page content -->
 <div class="w3-content" style="max-width:1532px;">
 
   
@@ -160,72 +236,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
 
 <!-- End page content -->
-</div>
-
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel1.jpg.pagespeed.ic.69cht3nrar.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel2.jpg.pagespeed.ic.AfdJUB4Qvd.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel3.jpg.pagespeed.ic.C3c3yIjGHj.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel4.jpg.pagespeed.ic.LnClR-Cn0m.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel5.jpg.pagespeed.ic.dWJzcUqKWw.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-4">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://preview.colorlib.com/theme/rolax/assets/img/gallery/xhotel6.jpg.pagespeed.ic.oG-L9OmhCA.webp" alt="Card image cap" style="width:100%">
-            <div class="card-body">
-                <h3>Column 1</h3>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-    
-  </div>
 </div>
 
 </body>

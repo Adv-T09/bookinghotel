@@ -1,24 +1,66 @@
-<nav class="navbar navbar-expand-md bg-white navbar-white">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a routerLink="home" class="navbar-brand btn btn-white"> <a class="navbar-brand" href="#">
-    <img src="https://image.flaticon.com/icons/png/512/3173/3173726.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    Luxury Place
-  </a></a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a routerLink="showproducts" routerLinkActive="active" class="btn btn-white">Products</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="addproduct" routerLinkActive="active" class="btn btn-white">Add Product</a>
-        </li>
-      </ul>
+<!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url(https://mdbootstrap.com/img/Photos/Others/images/78.jpg);
+        height: 50vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a routerLink="home" class="navbar-brand nav-link" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+          <strong>MDB</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a a routerLink="showproducts" routerLinkActive="active" class="nav-link" aria-current="page" href="#intro">Rooms</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="addproduct" routerLinkActive="active" class="nav-link" >Add Room</a>
+            </li>
+            <li class="nav-item">
+              <a a routerLink="home" routerLinkActive="active" class="nav-link" >Contact</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item">
+              <a class="nav-link" href="https://mdbootstrap.com/docs/standard/" target="_blank">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+            <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-md-8">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a routerLink="cart" class="btn btn-white">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
-      <span class="badge badge-info"></span>
-    </a>
-</nav>
+    
+    <!-- Background image -->
     <router-outlet></router-outlet>
