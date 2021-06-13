@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { productsModel } from '../products.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,4 +29,9 @@ export class ProductsService {
         return this.products;
       }))
   }
+
+  updateQuantity(key: number) {
+    this.products[key].quantity = this.products[key].quantity - 1;
+  }
+
 }

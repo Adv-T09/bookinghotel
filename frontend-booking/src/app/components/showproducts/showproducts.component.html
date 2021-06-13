@@ -33,7 +33,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <p>{{item.name}}</p>
         <p>{{item.detail}}</p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
-        <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">
+        <a class="btn btn-outline-primary" role="button" *ngIf="item.quantity!=0"
+                        (click)="addToCart(item, i)">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+        Choose Room</button>
       </div>
     </div>
   

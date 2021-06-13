@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ShowproductsComponent implements OnInit {
 
   products: any
 
-  constructor(private ps: ProductsService) {
+  constructor(private ps: ProductsService, private cs: CartService) {
     this.onLoading();
   }
 
@@ -29,5 +30,17 @@ export class ShowproductsComponent implements OnInit {
     }catch (error){
       console.log(error)
     }
+  }
+
+  getAllProduct() {
+    return this.ps.getProducts();
+  }
+
+  addToCart(product: any, key: number) {
+    this.cs.addToCart(product, key);
+  }
+
+  reduceToCart(product: any, key: number) {
+    this.cs.reduceToCart(product, key);
   }
 }
