@@ -4,9 +4,13 @@ import { AddproductComponent } from './components/addproduct/addproduct.componen
 import { ShowproductsComponent } from './components/showproducts/showproducts.component';
 import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { AdduserComponent } from './components/adduser/adduser.component';
 const routes: Routes = [
   { path: 'addproduct', component: AddproductComponent },
   { path: 'showproducts', component: ShowproductsComponent },
+  {path:'signin', component: SigninComponent},
+  {path:'users', component: AdduserComponent},
   { path: 'home', component: HomeComponent },
   { path: 'cart', component: CartComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
