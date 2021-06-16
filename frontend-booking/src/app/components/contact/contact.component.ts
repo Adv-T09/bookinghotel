@@ -49,7 +49,7 @@ import { ContactService } from 'src/app/services/contact.service';
     }
     putData(){
       this.contactForm.value.userId = this.local.get('user').result.id
-      this.ps.putContact(this.contactForm.value).subscribe(data=>{
+      this.ps.addContact(this.contactForm.value).subscribe(data=>{
         alert("add contact successfull !!!")
         
       },err=>{
@@ -57,5 +57,6 @@ import { ContactService } from 'src/app/services/contact.service';
         
       })
     }
+    
   
   }
