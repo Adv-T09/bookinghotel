@@ -2,16 +2,16 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h2 id = "adorder">AddminOrder</h2>
+        <h2 id = "adorder">Client's Orders</h2>
         <div class="table-responsive-md">  
         <table class="table table-striped table-inverse">
             <thead class="thead-inverse">
                 <tr>
                     <th>ID.</th>
-                    <th>รายละเอียด</th>
-                    <th>ราคารวม</th>
-                    <th>สถานะ</th>
-                    <th>ยืนยัน</th>
+                    <th>Room Details</th>
+                    <th>Prices</th>
+                    <th>Status</th>
+                    <th>Acception</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,9 +21,9 @@
                     <td>{{item.price}}</td>
                     <td>{{item.status}}</td>
                     <td> 
-                        <span *ngIf="item.status == 'success'" class="success">ส่งของ</span>
-                        <button *ngIf="item.status != 'success'" (click)="openLg(content,item.img)" id="popup">คลิกดูสลิป</button>
-                        <button  *ngIf="item.status != 'success'"type="button" class="btn btn-primary" id="accept" (click)="conferm(i)">ยืนยัน</button>
+                        <span *ngIf="item.status == 'success'" class="success">Booked</span>
+                        <button *ngIf="item.status != 'success'" (click)="openLg(content,item.img)" id="popup">Receipt</button>
+                        <button  *ngIf="item.status != 'success'"type="button" class="btn btn-primary" id="accept" (click)="conferm(i)">Accept</button>
                     </td>
                 </tr>
             </tbody>
@@ -35,7 +35,7 @@
 
 <ng-template #content let-modal>
     <div class="modal-header">
-      <h4 class="modal-title">สลิปโอนเงิน</h4>
+      <h4 class="modal-title">Payment's Receipt</h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>

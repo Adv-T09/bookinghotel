@@ -30,9 +30,9 @@
                 </div>
                 <div class="card-body">
                   <h3>{{item.type}}</h3>
-                  <h6 class="w3-opacity">From {{item.price}}$</h6>
+                  <h6 class="w3-opacity">Price: {{item.price}}$</h6>
                   <p class="card-text">
-                    {{item.detail}}
+                    Detail: {{item.detail}}
                   </p>
                   <p class="card-text"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
                   <button class="w3-button w3-block w3-black w3-margin-bottom">
@@ -60,27 +60,27 @@
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id = "aad">รายระเอียด</h4>
+    <h4 class="modal-title" id = "aad">Details</h4>
   </div>
   <div class="modal-body" id = "aad">
-    <p>ชื่อ : {{products[number].name}}</p>
+    <p>Room Name : {{products[number].name}}</p>
     <p><img [src]="products[number].img" style="height:150px;"></p>
 
-    <p>ประเภท : {{products[number].type}}</p>
-    <p>รายละเอียด : {{products[number].detail}}</p>
-    <p>ราคา : {{products[number].price}} ฿</p>
+    <p>Room type : {{products[number].type}}</p>
+    <p>Room Detail : {{products[number].detail}}</p>
+    <p>Room Price : {{products[number].price}} ฿</p>
 
 
     <div class="row">
       <div class="col-md-2">
-        <p>จำนวน : </p><input [(ngModel)]="quantity" type="number" class="form-control" id="inputZip">
+        <p>Quantity : </p><input [(ngModel)]="quantity" type="number" class="form-control" id="inputZip">
       </div>
     </div>
   </div>
 
 
   <div class="modal-footer" id = "aad">
-    <p><button class="w3-button w3-blue-grey" (click)="addtoCart()">ยืนยัน</button></p>
-    <p><button class="w3-button w3-white" (click)="cancle()">ปิด</button></p>
+    <p><button class="w3-button w3-blue-grey" (click)="addtoCart()">Booking</button></p>
+    <p><button class="w3-button w3-white" (click)="cancle()">Close</button></p>
   </div>
 </ng-template>

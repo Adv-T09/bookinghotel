@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShowroomsComponent } from './components/showrooms/showrooms.component';
 import { AddminComponent } from './components/addmin/addmin.component';
+import { ContactComponent } from './components/contact/contact.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -38,7 +39,8 @@ import { AddminComponent } from './components/addmin/addmin.component';
     NavbarComponent,
     HomeComponent,
     ShowroomsComponent,
-    AddminComponent
+    AddminComponent,
+    ContactComponent
   ],
 
   providers: [],

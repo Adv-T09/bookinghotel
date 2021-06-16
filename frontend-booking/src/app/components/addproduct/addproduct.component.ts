@@ -8,7 +8,7 @@ import { ProductsService} from '../../services/product.service'
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit {
-productType :string[] = ['ไม้คลุมดิน','ไม้กระถาง','ไม้น้ำ','ไม้พุ่มสูง']
+productType :string[] = ['Single Room','Double Room','Family Room','Deluxe Room']
   constructor(private ps:ProductsService) { }
 productForm = new FormGroup({
   type: new FormControl('',[Validators.required]),

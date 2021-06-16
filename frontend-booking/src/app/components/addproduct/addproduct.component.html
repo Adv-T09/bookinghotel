@@ -9,17 +9,17 @@
                 <form [formGroup]="productForm">
                     <div class="card">
                         <div class="card-header">
-                            Product Form
+                            Room Adding Form
                         </div>
                         <div class="card-body" id = "aad">
                             <div class="row">
                                 <div class="col-md-3">
-                                    ประเภท:
+                                    Room Tpye:
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <select class="form-control" formControlName="type">
-                                          <option value="">เลือกประเภทต้นไม้</option>
+                                          <option value="">--Select your room's type--</option>
                                           <option *ngFor="let item of productType" [value]="item">{{item}}</option>
                                         </select>
                                       </div>
@@ -28,14 +28,14 @@
                             
                             <div class="row">
                                 <div class="col-md-3">
-                                    ชื่อ:
+                                    Room Name:
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="text" class="form-control" formControlName='name'>
                                       <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="sign">
                                         <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
-                                          name is required
+                                          Name is required
                                         </div>
                                       </div>
                                     </div>
@@ -43,14 +43,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    รายละเอียด:
+                                    Room Detail:
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="text" class="form-control" formControlName='detail'>
                                       <div *ngIf="(fromdata.detail.dirty || fromdata.detail.touched)" id="sign">
                                         <div *ngIf="fromdata.detail.errors?.required" class="alert alert-danger">
-                                          detail is required
+                                          Detail is required
                                         </div>
                                       </div>
                                     </div>
@@ -59,25 +59,24 @@
                     
                             <div class="row">
                                 <div class="col-md-3">
-                                    ราคา:
+                                    Room Price:
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="number" class="form-control" formControlName='price'>
                                       <div *ngIf="(fromdata.price.dirty || fromdata.price.touched)" id="sign">
                                         <div *ngIf="fromdata.price.errors?.required" class="alert alert-danger">
-                                          price is required
+                                          Price is required
                                         </div>
                                         <div *ngIf="fromdata.price.value < 0" class="alert alert-danger">
-                                           price > 0 plss
-                                        </div>
+                                           Price can't lower than 0                                         </div>
                                       </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    รูป:
+                                    Room Picture:
                                 </div>
                                 <div class="col-md-9">
                                     <div class="form-group">
@@ -95,8 +94,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="modal-footer" id = "aad">
-                                    <p><button class="w3-button " (click)="addProduct()" id="accept">Add</button></p>
-                                    <p><button class="w3-button " (click)="resetForm()" id="cancle">Reset</button></p>
+                                    <p><button class="w3-button " (click)="addProduct()" id="accept">Add Room</button></p>
+                                    <p><button class="w3-button " (click)="resetForm()" id="cancle">Reset Data</button></p>
                                     </div>
                                 </div>
                             </div>

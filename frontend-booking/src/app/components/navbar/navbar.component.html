@@ -19,19 +19,17 @@
                 <a class="nav-link" aria-current="page" href="#intro" routerLink="showproducts" routerLinkActive="active">Rooms</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="#intro" routerLink="signin" routerLinkActive="active">Signin</a>
+                <a class="nav-link" aria-current="page" href="#intro" routerLink="contact" routerLinkActive="active">Contact</a>
               </li>
             </ul>
 
            <ul class="navbar-nav d-flex flex-row">
-               <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="order"
+               <a  *ngIf="local.get('user') != null" class="nav-link" routerLink="order"
                     routerLinkActive="active">Order</a>
                 <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="admin"
-                    routerLinkActive="active">Admin</a>
-                <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="showproducts"
-                    routerLinkActive="active">Rooms</a>
+                    routerLinkActive="active">Client</a>
                 <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="addproduct"
-                    routerLinkActive="active">Add Product</a>
+                    routerLinkActive="active">Add Rooms</a>
                 <a *ngIf="local.get('user') != null" class="nav-link">{{getUser()}}</a>
                 <a id="login" *ngIf="local.get('user') == null" class="nav-link" routerLink="signin"
                     routerLinkActive="active">Login</a>

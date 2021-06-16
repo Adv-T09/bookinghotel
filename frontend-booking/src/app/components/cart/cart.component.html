@@ -9,11 +9,11 @@
             <thead class="thead-inverse">
                 <tr>
                     <th>No.</th>
-                    <th>ซื่อสินค้า</th>
-                    <th>ประเภท</th>
-                    <th>รายละเอียด</th>
-                    <th>ราคา</th>
-                    <th>จำนวน</th>
+                    <th>Room Name</th>
+                    <th>Room Type</th>
+                    <th>Room Detail</th>
+                    <th>Room Price</th>
+                    <th>Quantity</th>
                     <th></th>
                 </tr>
             </thead>
@@ -25,7 +25,7 @@
                     <td>{{item.detail}}</td>
                     <td>{{item.price}}</td>
                     <td>{{item.quantity}} </td>      
-                    <td><button id = "button"type="button" class="btn btn-primary" (click)="deleteProduct(item._id)">ลบ</button></td>      
+                    <td><button id = "button"type="button" class="btn alert-danger" (click)="deleteProduct(item._id)">Cancel</button></td>      
                 </tr>
             </tbody>
         </table>
@@ -38,10 +38,10 @@
     <div class="row">
         <div class="col-md-8"></div>
         <div class="col-md-2">
-            <p *ngIf ="getlengthCart()>0" id="price">ราคารวม: {{calculate()}}</p>
+            <p *ngIf ="getlengthCart()>0" id="price">Your payment: {{calculate()}}</p>
         </div>
         <div class="col-md-2">
-            <button *ngIf ="getlengthCart()>0" type="button" class="btn btn-primary" (click)="buy()">สั่งซื้อ</button>
+            <button *ngIf ="getlengthCart()>0" type="button" class="btn btn-primary" (click)="buy()">Conferm</button>
         </div>
     </div>
 </div>
