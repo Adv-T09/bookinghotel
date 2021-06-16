@@ -1,4 +1,6 @@
-<div class="container-fluid" style="margin-top:30px">
+
+<div class="container-fluid">
+    <br>
     <div class="row">
       <div class="col-md-12">
         <h2>My Cart</h2>
@@ -22,7 +24,7 @@
                     <td>{{item.type}}</td>
                     <td>{{item.detail}}</td>
                     <td>{{item.price}}</td>
-                    <td>{{item.quantity}} </td>   
+                    <td>{{item.quantity}} </td>      
                     <td><button id = "button"type="button" class="btn btn-primary" (click)="deleteProduct(item._id)">ลบ</button></td>      
                 </tr>
             </tbody>

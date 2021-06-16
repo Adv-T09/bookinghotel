@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { OrderService } from 'src/app/services/order.service';
+import { OderService } from 'src/app/services/oder.service';
 import { Router } from '@angular/router'
 
 @Component({
@@ -10,8 +10,7 @@ import { Router } from '@angular/router'
 })
 export class CartComponent implements OnInit {
   carts: any = []
-  constructor(private router: Router,private cart: CartService, private order: OrderService) { this.onLoading() }
-
+  constructor(private router: Router,private cart: CartService, private order: OderService) { this.onLoading() }
   onLoading() {
     try {
       this.cart.getCartByUserId().subscribe(
@@ -28,7 +27,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-
+ 
   buy() {
     let mystr = ""
     for (let i = 0; i < this.carts.length; i++) {

@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-booking": {
+    "tree-shop-g10": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend-booking",
+            "outputPath": "dist/tree-shop-g10",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,8 +31,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -77,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend-booking:build:production"
+              "browserTarget": "tree-shop-g10:build:production"
             },
             "development": {
-              "browserTarget": "frontend-booking:build:development"
+              "browserTarget": "tree-shop-g10:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-booking:build"
+            "browserTarget": "tree-shop-g10:build"
           }
         },
         "test": {
@@ -111,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "frontend-booking"
+  "defaultProject": "tree-shop-g10"
 }

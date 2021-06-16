@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsersService } from 'src/app/services/users.service';
+import { SignupService } from '../../services/signup.service'
 import { Router } from '@angular/router'
-import { CartComponent } from '../cart/cart.component';
 import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-signup',
@@ -16,7 +15,7 @@ export class SignupComponent implements OnInit {
     password: new FormControl('',[Validators.required]),
     role: new FormControl('')
   });
-  constructor(private router: Router,private signup: UsersService,private cart:CartService) { }
+  constructor(private router: Router,private signup: SignupService,private cart:CartService) { }
   ngOnInit(): void {
   }
   register(){  
@@ -45,7 +44,7 @@ export class SignupComponent implements OnInit {
       });
   }
 
-
+  
   get fromdata(){
     console.log(this.signupForm.controls);
     

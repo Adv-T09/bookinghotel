@@ -1,15 +1,17 @@
-<div class="card">
-    <div class="card-body">
-        <div  id="addproduct" class="row">
+<div >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&family=Teko&display=swap" rel="stylesheet">
+    <div class="card-body ">
+        <div  id="addproduct" class="row" >
             <div class="col-md-2">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 ">
                 <form [formGroup]="productForm">
                     <div class="card">
                         <div class="card-header">
                             Product Form
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" id = "aad">
                             <div class="row">
                                 <div class="col-md-3">
                                     ประเภท:
@@ -31,6 +33,11 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="text" class="form-control" formControlName='name'>
+                                      <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="sign">
+                                        <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
+                                          name is required
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -41,19 +48,15 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="text" class="form-control" formControlName='detail'>
+                                      <div *ngIf="(fromdata.detail.dirty || fromdata.detail.touched)" id="sign">
+                                        <div *ngIf="fromdata.detail.errors?.required" class="alert alert-danger">
+                                          detail is required
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    จำนวน:
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="form-group">
-                                      <input type="number" class="form-control" formControlName='quantity'>
-                                    </div>
-                                </div>
-                            </div>
+                    
                             <div class="row">
                                 <div class="col-md-3">
                                     ราคา:
@@ -61,6 +64,14 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                       <input type="number" class="form-control" formControlName='price'>
+                                      <div *ngIf="(fromdata.price.dirty || fromdata.price.touched)" id="sign">
+                                        <div *ngIf="fromdata.price.errors?.required" class="alert alert-danger">
+                                          price is required
+                                        </div>
+                                        <div *ngIf="fromdata.price.value < 0" class="alert alert-danger">
+                                           price > 0 plss
+                                        </div>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
@@ -83,8 +94,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="reset" class="btn btn-danger" (click)="resetForm()" id="cancle">Reset</button>
-                                    <button type="button" class="btn btn-primary" (click)="addProduct()" id="accept">Add</button>&nbsp;
+                                    <div class="modal-footer" id = "aad">
+                                    <p><button class="w3-button " (click)="addProduct()" id="accept">Add</button></p>
+                                    <p><button class="w3-button " (click)="resetForm()" id="cancle">Reset</button></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -96,3 +109,4 @@
         </div>
     </div>
 </div>
+

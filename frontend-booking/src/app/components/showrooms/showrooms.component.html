@@ -1,0 +1,86 @@
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+<!-- Page content -->
+ <main class="mt-5">
+      <div class="container">
+
+      <hr class="my-5" />
+
+        <!--Section: Content-->
+        <section class="text-center">
+          <h4 class="mb-5"><strong>This is our rooms example</strong></h4>
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4" *ngFor="let item of products; index as i">
+              <div class="card" >
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    [src]="item.img"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h3>{{item.type}}</h3>
+                  <h6 class="w3-opacity">From {{item.price}}$</h6>
+                  <p class="card-text">
+                    {{item.detail}}
+                  </p>
+                  <p class="card-text"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
+                  <button class="w3-button w3-block w3-black w3-margin-bottom">
+                        <a class="btn btn-outline-primary" role="button" *ngIf="item.quantity!=0" (click)="openLg(content,i)">
+                        <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                          Choose Room</button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </section>
+        <!--Section: Content-->
+
+  <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
+    <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> 423 Some adr, Chicago, US</div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +00 151515</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
+  </div>
+
+  <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
+  </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id = "aad">รายระเอียด</h4>
+  </div>
+  <div class="modal-body" id = "aad">
+    <p>ชื่อ : {{products[number].name}}</p>
+    <p><img [src]="products[number].img" style="height:150px;"></p>
+
+    <p>ประเภท : {{products[number].type}}</p>
+    <p>รายละเอียด : {{products[number].detail}}</p>
+    <p>ราคา : {{products[number].price}} ฿</p>
+
+
+    <div class="row">
+      <div class="col-md-2">
+        <p>จำนวน : </p><input [(ngModel)]="quantity" type="number" class="form-control" id="inputZip">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-footer" id = "aad">
+    <p><button class="w3-button w3-blue-grey" (click)="addtoCart()">ยืนยัน</button></p>
+    <p><button class="w3-button w3-white" (click)="cancle()">ปิด</button></p>
+  </div>
+</ng-template>

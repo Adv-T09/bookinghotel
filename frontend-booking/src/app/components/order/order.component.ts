@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService} from '../../services/order.service'
-import { LocalStorageService } from 'angular-web-storage'
+import { OderService} from '../../services/oder.service'
+
 
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent implements OnInit {
+export class OderComponent implements OnInit {
   orders:any
   status: boolean[] = []; 
-  constructor(private od:OrderService, private local:LocalStorageService) {this.onLoading() }
+  constructor(private od:OderService) {this.onLoading() }
 
   ngOnInit(): void {
   }
@@ -53,13 +53,6 @@ export class OrderComponent implements OnInit {
         }
       }
     }
-  }
-  getRole() {
-    if (this.local.get('user') === null) {
-      return "notLogin"
-    }
-    return this.local.get('user').result.role
-    
   }
  putOrder(i:number){
    this.orders[i].status = "confirmation"
