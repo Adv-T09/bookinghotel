@@ -28,7 +28,7 @@ expressApp.use((req,res,next)=>{
 expressApp.use('/api/cart', require('./api/cart'))
 expressApp.use('/api/products',require('./api/products'))
 expressApp.use('/api/order',require('./api/order'))
-expressApp.use('/api/user',require('./api/user'))
+expressApp.use('/api/contact',require('./api/contact'))
 expressApp.use('/user', require('./router/user'))
 expressApp.use('/login', require('./router/signin'))
 

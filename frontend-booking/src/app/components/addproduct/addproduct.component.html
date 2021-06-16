@@ -1,3 +1,5 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css%22%3E">
 <div >
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&family=Teko&display=swap" rel="stylesheet">
@@ -94,8 +96,12 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="modal-footer" id = "aad">
-                                    <p><button class="w3-button " (click)="addProduct()" id="accept">Add Room</button></p>
-                                    <p><button class="w3-button " (click)="resetForm()" id="cancle">Reset Data</button></p>
+                                    <p align="center">
+                                            <button type="button" class="btn btn-primary ; w3-button w3-white w3-border w3-border-blue w3-round-large"
+                                                    (click)="addProduct()">Add</button>&nbsp;
+                                            <button type="reset" class="btn btn-danger ; w3-button w3-white w3-border w3-border-red w3-round-large" 
+                                                    (click)="resetForm()">Reset</button>
+                                        </p>
                                     </div>
                                 </div>
                             </div>

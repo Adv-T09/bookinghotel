@@ -97,9 +97,9 @@ const delteProductInCart = (userid, productid) => {
     })
 }
 
-router.route('/delete').post((req, res) => {
-    console.log(req.body);
-    delteProductInCart(req.body.userId, req.body.productId).then(result => {
+
+router.route('/delete/:idproduct/:iduser').delete(authorization,(req, res) => {
+    delteProductInCart(req.params.iduser, req.params.idproduct).then(result => {
         console.log(result);
         res.status(200).json(result)
     }).catch(err => {
@@ -107,8 +107,7 @@ router.route('/delete').post((req, res) => {
     })
 })
 
-router.route('/add/:id').get((req, res) => {
-    console.log(req.params.id);
+router.route('/add/:id').post((req, res) => {
     const playload = {
         userId: req.params.id
     }

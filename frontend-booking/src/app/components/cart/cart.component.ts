@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
   buy() {
     let mystr = ""
     for (let i = 0; i < this.carts.length; i++) {
-      let mystr1 = this.carts[i].name + " ราคา " + this.carts[i].price + " จำนวน " + this.carts[i].quantity + "\n||"
+      let mystr1 = this.carts[i].name + " Price " + this.carts[i].price + " Amount " + this.carts[i].quantity + " Rooms" + "\n"
       mystr += mystr1
     }
     let data = {
@@ -64,11 +64,8 @@ export class CartComponent implements OnInit {
   }
 
   deleteProduct(product: String) {
-    let mybody = {
-      productId: product,
-      userId: String
-    }
-    this.cart.deleteOneProduct(mybody).subscribe(data => {
+   
+    this.cart.deleteOneProduct(product).subscribe(data => {
       console.log(data);
       window.location.reload();
     }, err => {

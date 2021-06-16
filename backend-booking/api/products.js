@@ -8,7 +8,6 @@ const productSchema = Schema({
     type:String,    
     name:String,
     detail:String,
-    quantity:Number,
     price:Number,
     img:String
 
@@ -52,6 +51,8 @@ const getProduct = () =>{
         })
     })
 }
+
+
 
 router.route('/add').post(authorization,(req,res)=>{
     console.log('add');
