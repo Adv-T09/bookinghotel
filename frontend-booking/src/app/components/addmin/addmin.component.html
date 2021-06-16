@@ -1,1 +1,60 @@
-<p>addmin works!</p>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 id = "adorder">AddminOrder</h2>
+        <div class="table-responsive-md">  
+        <table class="table table-striped table-inverse">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>ID.</th>
+                    <th>รายละเอียด</th>
+                    <th>ราคารวม</th>
+                    <th>สถานะ</th>
+                    <th>ยืนยัน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of orders; index as i">
+                    <td scope="row">{{i+1}}</td>
+                    <td>{{item.detail}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.status}}</td>
+                    <td> 
+                        <span *ngIf="item.status == 'success'" class="success">ส่งของ</span>
+                        <button *ngIf="item.status != 'success'" (click)="openLg(content,item.img)" id="popup">คลิกดูสลิป</button>
+                        <button  *ngIf="item.status != 'success'"type="button" class="btn btn-primary" id="accept" (click)="conferm(i)">ยืนยัน</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">สลิปโอนเงิน</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><img [src]="img" style="height:150px;">&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
+  <ng-template #longContent let-modal>
+    
+    <div class="modal-body">
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+  
