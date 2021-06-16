@@ -94,18 +94,41 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-section">
       <label>Name</label>
       <input id="error" type="text" class="form-control" placeholder="{{contact[0].name}}" formControlName='name'>
+      <div *ngIf="(fromdata.name.dirty || fromdata.name.touched)" id="sign">
+        <div *ngIf="fromdata.name.errors?.required" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
     </div>
     <div class="w3-section">
       <label>Email</label>
       <input id="error" type="text" class="form-control" placeholder="{{contact[0].email}}"formControlName='email'>
+      <div *ngIf=" (fromdata.email.dirty || fromdata.email.touched)" id="sign">
+        <div *ngIf="fromdata.email.errors?.required" class="alert alert-danger" >
+          Email is required
+        </div>
+        <div *ngIf="fromdata.email.errors?.email" class="alert alert-danger">
+          Email is incorrect
+        </div>
+      </div>
     </div>
     <div class="w3-section">
       <label>Subject</label>
       <input id="error" type="text" class="form-control" placeholder="{{contact[0].subject}}"formControlName='subject'>
+      <div *ngIf="(fromdata.subject.dirty || fromdata.subject.touched)" id="sign">
+        <div *ngIf="fromdata.subject.errors?.required" class="alert alert-danger">
+          Subject is required
+        </div>
+      </div>
     </div>
     <div class="w3-section">
       <label>Message</label>
       <input id="error" type="text" class="form-control" placeholder="{{contact[0].message}}"formControlName='message'>
+      <div *ngIf="(fromdata.message.dirty || fromdata.message.touched)" id="sign">
+        <div *ngIf="fromdata.message.errors?.required" class="alert alert-danger">
+          Message is required
+        </div>
+      </div>
     </div>
     <button type="submit" class="btn btn-primary" (click)="putData()" id="accept">Send</button>
   </form>
