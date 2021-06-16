@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from '../../services/auth.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-signin',
@@ -10,33 +9,37 @@ import { AuthService } from '../../services/auth.service'
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
   authForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    password: new FormControl('',[Validators.required]),
   });
+  constructor(private auth: AuthService,private router: Router) { }
 
-  constructor(private router: Router, private auth:AuthService ) { }
-
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+  }
   signin(){
-    console.log(this.authForm.value);
-    this.auth.signIn(this.authForm.value).subscribe(
-      data => {
-        if(data.status == true){
-          this.router.navigate(['/home'])
-        }else{
-          alert('Username or Password is incorrect');
-        }
-      },err => {
-        console.log(err);
-        alert('Username or Password is Canfind');
-
-      });
+  console.log(this.authForm.value)
+      this.auth.signin(this.authForm.value).subscribe(
+        data => {
+          if(data.status == true){
+            this.router.navigate([''])
+          }else{
+            alert('Email or Password is insorrect');
+          }
+        },
+        err => {
+          console.log(err);
+          alert('Email or Password is insorrect');
+        });
   }
   signup(){
-    this.router.navigate(['/users'])
+    this.router.navigate(['/signup']);
   }
+
+  get fromdata(){
+    console.log(this.authForm.controls);
+    return this.authForm.controls
+  }
+
 
 }

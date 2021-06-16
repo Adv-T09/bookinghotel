@@ -1,37 +1,84 @@
 import { Injectable } from '@angular/core';
-import { ProductsService } from './products.service';
-import { productsModel } from '../products.model';
-
+import { HttpClient,HttpHeaders } from '@angular/common/http'
+import { map } from 'rxjs/operators'
+import { LocalStorageService } from 'angular-web-storage'
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class CartService {
-  cartProduct: productsModel = [];
-  total: number = 0;
+  cart:any
 
-  constructor(private ps: ProductsService) {}
-
-  addToCart(product: any, key: number) {
-    this.cartProduct.push(product);
-    this.ps.updateQuantity(key);
-    this.total = this.total + product.price;
+  constructor(private http: HttpClient,public local: LocalStorageService) { 
   }
 
-  reduceToCart(product: any, key: number) {
-    this.cartProduct.reduce(product);
-    this.ps.updateQuantity(key);
-    this.total = this.total - product.price;
+  
+  addCart(data:any){
+    console.log("this " + data._id);
+    let id =  data._id
+    return this.http.get<any>('http://localhost:3000/api/cart/add/'+id).pipe(map(data => {
+      if(data){
+        console.log(data);
+        this.cart=data
+        console.log(this.cart); 
+      }
+      return this.cart
+    }))
+  }
+ 
+  getCartByUserId(){
+    let token = this.local.get('user').token
+    let userid = this.local.get('user').result.id
+    return this.http.get<any>('http://localhost:3000/api/cart/get/'+userid,{
+      headers: new HttpHeaders().set('Authorization', token),
+    }).pipe(map(data => {
+      if(data){
+        console.log(data);
+        this.cart=data
+        console.log(this.cart); 
+      }
+      return this.cart
+    }))
   }
 
-  getCart() {
-    return this.cartProduct;
+
+  pushCart(cart:any){
+    try{
+    var token = this.local.get('user').token
+    }catch(err){
+     alert("login plss")
+    }
+    let userid = this.local.get('user').result.id
+    cart.userId = userid
+    console.log("this cart " ,cart);
+    
+    return this.http.put<any>('http://localhost:3000/api/cart/put/',cart,{
+      headers: new HttpHeaders().set('Authorization', token),
+    }).pipe(map(data => {
+      if(data){
+        console.log(data);
+        this.cart=data
+        console.log(this.cart); 
+      }
+      return this.cart
+    }))
   }
 
-  getCounter() {
-    return this.cartProduct.length;
-  }
 
-  getTotal() {
-    return this.total;
+  deleteOneProduct(id:any){
+    let userid = this.local.get('user').result.id
+    id.userId = userid
+    console.log(id);
+    return this.http.post<any>('http://localhost:3000/api/cart/delete',id).pipe(map(data => {
+      if(data){
+        console.log(data);
+        this.cart=data
+        console.log(this.cart); 
+      }
+      return this.cart
+    }))
   }
+  
+  
 }
+
+

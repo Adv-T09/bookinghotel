@@ -1,3 +1,4 @@
+
 <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark navbar-dark" style="z-index: 2000;">
         <div class="container-fluid">
@@ -23,14 +24,22 @@
             </ul>
 
            <ul class="navbar-nav d-flex flex-row">
-              <!-- Icons -->
-              <a routerLink="cart" class="btn btn-dark">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart 
-      <span class="badge badge-info">{{getCounter()}}</span>
-    </a>
-              <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" aria-current="page" href="#intro" routerLink="addproduct" routerLinkActive="active">Add Room</a>
-              </li>
+               <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="order"
+                    routerLinkActive="active">Order</a>
+                <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="admin"
+                    routerLinkActive="active">Admin</a>
+                <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="showproducts"
+                    routerLinkActive="active">Rooms</a>
+                <a  *ngIf="getRole() == 'admin'" class="nav-link" routerLink="addproduct"
+                    routerLinkActive="active">Add Product</a>
+                <a *ngIf="local.get('user') != null" class="nav-link">{{getUser()}}</a>
+                <a id="login" *ngIf="local.get('user') == null" class="nav-link" routerLink="signin"
+                    routerLinkActive="active">Login</a>
+                <a *ngIf="local.get('user') != null" class="nav-link" routerLink=""
+                    routerLinkActive="active" (click)="logout()">Logout</a>
+                <a class="nav-link" routerLink="cart" routerLinkActive="active">
+                    <i class="fa fa-shopping-cart"> <span class="badge w3-text-orange"></span></i>
+                </a>
             </ul> 
           </div>
         </div>

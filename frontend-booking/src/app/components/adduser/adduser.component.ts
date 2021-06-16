@@ -24,6 +24,7 @@ export class AdduserComponent implements OnInit {
     img: new FormControl('', [Validators.required]),
     file: new FormControl('', [Validators.required]),
   });
+  
 
   previewLoaded: boolean = false;
 
